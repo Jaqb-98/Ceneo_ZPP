@@ -32,6 +32,7 @@ namespace Api
             services.AddSingleton<IItemsDatabaseSettings>(sp => sp.GetRequiredService<IOptions<ItemsDatabaseSettings>>().Value);
 
             services.AddSingleton<ItemsService>();
+            services.AddSingleton<WebsiteParser>();
 
             services.AddControllers();
 
