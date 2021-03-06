@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Helper;
 
 namespace Api.Controllers
 {
@@ -83,18 +84,21 @@ namespace Api.Controllers
         [HttpPut(Name = "Upsert")]
         public IActionResult Upsert(int id, Item itemIn)
         {
-            var item = _itemsService.Get(id);
-
-            if (item == null)
-            {
-                _itemsService.Create(itemIn);
-                return NoContent();
-            }
-
             _itemsService.Upsert(id, itemIn);
 
             return NoContent();
         }
+
+        [HttpPut]
+        [Route("UpsertItems")]
+        public IActionResult Upsert(List<Item> itemsIn)
+        {
+            _itemsService.Upsert(itemsIn);
+        
+            return NoContent();
+        }
+
+
 
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
