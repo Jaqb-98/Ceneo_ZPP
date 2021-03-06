@@ -19,10 +19,13 @@ namespace GUI
 
             InitializeComponent();
 
-            ProductName = item.ProductName;
-            Price = item.Price;
-            Category = item.Category;
-            Image = item.Image;
+            Item = new Item();
+            Item.ProductName = item.ProductName;
+            Item.Price = item.Price;
+            Item.Category = item.Category;
+            Item.Image = item.Image;
+
+            SetValues();
 
         }
 
@@ -34,58 +37,24 @@ namespace GUI
 
         #region Properties
 
-        //public Item Item { get; set; }
-
-        private string _productName;
-        private string _category;
-        private decimal _price;
-        private string _image;
-
-        //[Category("Custom Props")]
-        public string ProductName
-        {
-            get { return _productName; }
-            set { _productName = value; lblItemName.Text = value; }
-        }
-
-
-        //[Category("Custom Props")]
-        public string Category
-        {
-            get { return _category; }
-            set { _category = value; lblItemCategory.Text = value; }
-        }
-
-
-        //[Category("Custom Props")]
-        public decimal Price
-        {
-            get { return _price; }
-            set { _price = value; lblItemPrice.Text = value.ToString(); }
-        }
-
-
-        //[Category("Custom Props")]
-        public string Image
-        {
-            get { return _image; }
-            set
-            {
-                _image = value;
-                if (value != null)
-                {
-                    StringBuilder sb = new StringBuilder();
-                    sb.Append("http:").Append(value);
-
-                    pbItemImage.LoadAsync(sb.ToString());
-                }
-            }
-        }
-
+        public Item Item { get; set; }
 
         #endregion
 
+        private void SetValues()
+        {
+            lblItemCategory.Text = Item.Category;
+            lblItemName.Text = Item.ProductName;
+            lblItemPrice.Text = Item.Price.ToString();
 
+            if (Item.Image != null)
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.Append("http:").Append(Item.Image);
+
+                pbItemImage.LoadAsync(sb.ToString());
+            }
+        }
 
     }
 }
