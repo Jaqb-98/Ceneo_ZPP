@@ -3,10 +3,12 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 using System.Collections.Generic;
 using System.Linq;
+using Helper;
+
 
 namespace Api.Services
 {
-    
+
     public class ItemsService
     {
         private readonly IMongoCollection<Item> _items;
@@ -49,6 +51,17 @@ namespace Api.Services
 
         public void Upsert(int id, Item ItemIn) =>
             _items.ReplaceOne(new BsonDocument("_id", id), ItemIn, new ReplaceOptions { IsUpsert = true });
+
+        public void Upsert(List<Item> items)
+        {
+            foreach (var item in items)
+            {
+                if (_items.Find<Item>(i => i.PID == item.PID).FirstOrDefault() == null)
+                    Create(item);
+                else
+                    Update(item.PID, item);
+            }
+        }
 
 
 
