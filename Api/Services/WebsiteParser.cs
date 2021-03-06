@@ -6,12 +6,11 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Helper;
 
 namespace Api.Services
 {
-    /// <summary>
-    /// 
-    /// </summary>
+
     public class WebsiteParser
     {
         /// <summary>
