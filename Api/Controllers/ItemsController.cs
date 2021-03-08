@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Helper;
+using Api.Interfaces;
 
 namespace Api.Controllers
 {
@@ -13,13 +14,13 @@ namespace Api.Controllers
     [ApiController]
     public class ItemsController : ControllerBase
     {
-        private readonly ItemsService _itemsService;
-        private WebsiteParser _websiteParser;
+        private readonly IItemsService _itemsService;
+        private readonly IWebsiteParser _websiteParser;
 
-        public ItemsController(ItemsService itemsService)
+        public ItemsController(IItemsService itemsService, IWebsiteParser websiteParser)
         {
             _itemsService = itemsService;
-            _websiteParser = new WebsiteParser();
+            _websiteParser = websiteParser;
         }
 
         [HttpGet]
