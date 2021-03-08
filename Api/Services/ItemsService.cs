@@ -4,12 +4,12 @@ using MongoDB.Driver;
 using System.Collections.Generic;
 using System.Linq;
 using Helper;
-
+using Api.Interfaces;
 
 namespace Api.Services
 {
 
-    public class ItemsService
+    public class ItemsService : IItemsService
     {
         private readonly IMongoCollection<Item> _items;
 
