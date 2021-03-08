@@ -1,3 +1,4 @@
+using Api.Interfaces;
 using Api.Models;
 using Api.Services;
 using Microsoft.AspNetCore.Builder;
@@ -31,8 +32,9 @@ namespace Api
             services.Configure<ItemsDatabaseSettings>(Configuration.GetSection(nameof(ItemsDatabaseSettings)));
             services.AddSingleton<IItemsDatabaseSettings>(sp => sp.GetRequiredService<IOptions<ItemsDatabaseSettings>>().Value);
 
-            services.AddSingleton<ItemsService>();
-            services.AddSingleton<WebsiteParser>();
+            //services.AddSingleton<ItemsService>();
+            services.AddScoped<IItemsService, ItemsService>();
+            services.AddScoped<IWebsiteParser, WebsiteParser>();
 
             services.AddControllers();
 
