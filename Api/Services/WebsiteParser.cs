@@ -7,11 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Helper;
+using Api.Interfaces;
 
 namespace Api.Services
 {
 
-    public class WebsiteParser
+    public class WebsiteParser: IWebsiteParser
     {
         /// <summary>
         /// Returns parsed items from Ceneo
@@ -73,7 +74,6 @@ namespace Api.Services
                 img = node.Descendants("img").First().GetAttributeValue("data-original", String.Empty);
 
             var name = node.GetAttributeValue("data-productname", String.Empty);
-
 
 
             var price = node.GetAttributeValue("data-price", String.Empty);
