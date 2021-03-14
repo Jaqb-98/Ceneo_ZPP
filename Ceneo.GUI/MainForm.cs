@@ -118,5 +118,14 @@ namespace test
             _page++;
             backgroundWorker1.RunWorkerAsync();
         }
+
+        private void btnPreviousPage_Click(object sender, EventArgs e)
+        {
+            if (_page >= 2)
+            {
+                _page--;
+                backgroundWorker1.RunWorkerAsync();
+            }
+        }
     }
 }
