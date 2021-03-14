@@ -161,6 +161,7 @@
             this.btnPreviousPage.TabIndex = 12;
             this.btnPreviousPage.Text = "Previous";
             this.btnPreviousPage.UseVisualStyleBackColor = true;
+            this.btnPreviousPage.Click += new System.EventHandler(this.btnPreviousPage_Click);
             // 
             // MainForm
             // 
