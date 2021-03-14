@@ -1,0 +1,80 @@
+C:\Users\Sebastian\source\repos\test\test\bin\Debug\test.exe.config
+C:\Users\Sebastian\source\repos\test\test\bin\Debug\test.exe
+C:\Users\Sebastian\source\repos\test\test\bin\Debug\test.pdb
+C:\Users\Sebastian\source\repos\test\test\obj\Debug\test.Form1.resources
+C:\Users\Sebastian\source\repos\test\test\obj\Debug\test.Properties.Resources.resources
+C:\Users\Sebastian\source\repos\test\test\obj\Debug\test.SearchControl.resources
+C:\Users\Sebastian\source\repos\test\test\obj\Debug\test.csproj.GenerateResource.cache
+C:\Users\Sebastian\source\repos\test\test\obj\Debug\test.csproj.CoreCompileInputs.cache
+C:\Users\Sebastian\source\repos\test\test\obj\Debug\test.exe
+C:\Users\Sebastian\source\repos\test\test\obj\Debug\test.pdb
+C:\Users\Sebastian\source\repos\test\test\obj\Debug\test.MainControl.resources
+C:\Users\Sebastian\source\repos\test\test\obj\Debug\test.LoginControl.resources
+C:\Users\Sebastian\source\repos\test\test\obj\Debug\test.SearchControl2.resources
+C:\Users\Patryk\Desktop\test\test\bin\Debug\test.exe.config
+C:\Users\Patryk\Desktop\test\test\bin\Debug\test.exe
+C:\Users\Patryk\Desktop\test\test\bin\Debug\test.pdb
+C:\Users\Patryk\Desktop\test\test\obj\Debug\test.csprojAssemblyReference.cache
+C:\Users\Patryk\Desktop\test\test\obj\Debug\test.Form1.resources
+C:\Users\Patryk\Desktop\test\test\obj\Debug\test.LoginControl.resources
+C:\Users\Patryk\Desktop\test\test\obj\Debug\test.MainControl.resources
+C:\Users\Patryk\Desktop\test\test\obj\Debug\test.Properties.Resources.resources
+C:\Users\Patryk\Desktop\test\test\obj\Debug\test.SearchControl.resources
+C:\Users\Patryk\Desktop\test\test\obj\Debug\test.SearchControl2.resources
+C:\Users\Patryk\Desktop\test\test\obj\Debug\test.csproj.GenerateResource.cache
+C:\Users\Patryk\Desktop\test\test\obj\Debug\test.exe
+C:\Users\Patryk\Desktop\test\test\obj\Debug\test.pdb
+C:\Users\Sebastian\source\repos\test\test\obj\Debug\test.CompareControl.resources
+C:\Users\Sebastian\source\repos\test\test\obj\Debug\test.CompareControl2.resources
+C:\Users\Sebastian\source\repos\test\test\obj\Debug\test.CompareControl3.resources
+C:\Users\Patryk\Desktop\GRUPOWY\test\test\bin\Debug\test.exe.config
+C:\Users\Patryk\Desktop\GRUPOWY\test\test\bin\Debug\test.exe
+C:\Users\Patryk\Desktop\GRUPOWY\test\test\bin\Debug\test.pdb
+C:\Users\Patryk\Desktop\GRUPOWY\test\test\obj\Debug\test.csprojAssemblyReference.cache
+C:\Users\Patryk\Desktop\GRUPOWY\test\test\obj\Debug\test.Form1.resources
+C:\Users\Patryk\Desktop\GRUPOWY\test\test\obj\Debug\test.LoginControl.resources
+C:\Users\Patryk\Desktop\GRUPOWY\test\test\obj\Debug\test.MainControl.resources
+C:\Users\Patryk\Desktop\GRUPOWY\test\test\obj\Debug\test.Properties.Resources.resources
+C:\Users\Patryk\Desktop\GRUPOWY\test\test\obj\Debug\test.csproj.GenerateResource.cache
+C:\Users\Patryk\Desktop\GRUPOWY\test\test\obj\Debug\test.exe
+C:\Users\Patryk\Desktop\GRUPOWY\test\test\obj\Debug\test.pdb
+C:\Users\Artur\Downloads\test\test\test\obj\Debug\test.csprojAssemblyReference.cache
+C:\Users\Artur\Downloads\test\test\test\obj\Debug\test.CompareControl.resources
+C:\Users\Artur\Downloads\test\test\test\obj\Debug\test.CompareControl2.resources
+C:\Users\Artur\Downloads\test\test\test\obj\Debug\test.CompareControl3.resources
+C:\Users\Artur\Downloads\test\test\test\obj\Debug\test.Form1.resources
+C:\Users\Artur\Downloads\test\test\test\obj\Debug\test.LoginControl.resources
+C:\Users\Artur\Downloads\test\test\test\obj\Debug\test.MainControl.resources
+C:\Users\Artur\Downloads\test\test\test\obj\Debug\test.Properties.Resources.resources
+C:\Users\Artur\Downloads\test\test\test\obj\Debug\test.SearchControl.resources
+C:\Users\Artur\Downloads\test\test\test\obj\Debug\test.SearchControl2.resources
+C:\Users\Artur\Downloads\test\test\test\obj\Debug\test.csproj.GenerateResource.cache
+C:\Users\Artur\Downloads\test\test\test\obj\Debug\test.csproj.CoreCompileInputs.cache
+C:\Users\Artur\Downloads\test\test\test\obj\Debug\test.exe
+C:\Users\Artur\Downloads\test\test\test\obj\Debug\test.pdb
+C:\Users\Artur\Downloads\test\test\test\bin\Debug\test.exe.config
+C:\Users\Artur\Downloads\test\test\test\bin\Debug\test.exe
+C:\Users\Artur\Downloads\test\test\test\bin\Debug\test.pdb
+C:\Users\Patryk\Desktop\test\test\obj\Debug\test.CompareControl.resources
+C:\Users\Patryk\Desktop\test\test\obj\Debug\test.CompareControl2.resources
+C:\Users\Patryk\Desktop\test\test\obj\Debug\test.CompareControl3.resources
+C:\Users\Patryk\Desktop\GRUPOWY\test\test\obj\Debug\test.KontrolkaPorownaj_tlo.resources
+C:\Users\Patryk\Desktop\GRUPOWY\test\test\obj\Debug\test.KontrolkaPorownaj.resources
+C:\Users\Patryk\Desktop\GRUPOWY\test\test\obj\Debug\test.KontrolkaSzukaj_tlo.resources
+C:\Users\Patryk\Desktop\GRUPOWY\test\test\obj\Debug\test.KontrolkaSzukaj.resources
+E:\Visual Studio workspace\projekt zespołowy\Ceneo_ZPP\test\test\bin\Debug\test.exe.config
+E:\Visual Studio workspace\projekt zespołowy\Ceneo_ZPP\test\test\bin\Debug\test.exe
+E:\Visual Studio workspace\projekt zespołowy\Ceneo_ZPP\test\test\bin\Debug\test.pdb
+E:\Visual Studio workspace\projekt zespołowy\Ceneo_ZPP\test\test\obj\Debug\test.csprojAssemblyReference.cache
+E:\Visual Studio workspace\projekt zespołowy\Ceneo_ZPP\test\test\obj\Debug\test.KontrolkaPorownaj_tlo.resources
+E:\Visual Studio workspace\projekt zespołowy\Ceneo_ZPP\test\test\obj\Debug\test.KontrolkaPorownaj.resources
+E:\Visual Studio workspace\projekt zespołowy\Ceneo_ZPP\test\test\obj\Debug\test.Form1.resources
+E:\Visual Studio workspace\projekt zespołowy\Ceneo_ZPP\test\test\obj\Debug\test.LoginControl.resources
+E:\Visual Studio workspace\projekt zespołowy\Ceneo_ZPP\test\test\obj\Debug\test.MainControl.resources
+E:\Visual Studio workspace\projekt zespołowy\Ceneo_ZPP\test\test\obj\Debug\test.Properties.Resources.resources
+E:\Visual Studio workspace\projekt zespołowy\Ceneo_ZPP\test\test\obj\Debug\test.KontrolkaSzukaj_tlo.resources
+E:\Visual Studio workspace\projekt zespołowy\Ceneo_ZPP\test\test\obj\Debug\test.KontrolkaSzukaj.resources
+E:\Visual Studio workspace\projekt zespołowy\Ceneo_ZPP\test\test\obj\Debug\test.csproj.GenerateResource.cache
+E:\Visual Studio workspace\projekt zespołowy\Ceneo_ZPP\test\test\obj\Debug\test.csproj.CoreCompileInputs.cache
+E:\Visual Studio workspace\projekt zespołowy\Ceneo_ZPP\test\test\obj\Debug\test.exe
+E:\Visual Studio workspace\projekt zespołowy\Ceneo_ZPP\test\test\obj\Debug\test.pdb

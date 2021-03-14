@@ -12,22 +12,17 @@ namespace test
 {
     public partial class MainControl : UserControl
     {
-        Form1 _parent;
-        public MainControl(Form1 parent)
+        MainForm _parent;
+        public MainControl(MainForm parent)
         {
             _parent = parent;
             InitializeComponent();
          
         }
 
-        public MainControl()
-        {
-            InitializeComponent();
-        }
-
         private void porownaj1_Click(object sender, EventArgs e)
         {
-            _parent.dostemp();
+            
         }
 
         private void porownaj2_Click(object sender, EventArgs e)
