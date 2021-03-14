@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Instrukcja:
 
 
@@ -7,3 +8,6 @@ Instrukcja:
 4)  Build-> Ctrl + Shift + B, Run ->  Ctrl + F5
 5)  Set GUI as startup project
 6)  Run GUI
+=======
+GUI Branch
+>>>>>>> ba1006cb38f9c41ac326f4fe34fb0313236a030c

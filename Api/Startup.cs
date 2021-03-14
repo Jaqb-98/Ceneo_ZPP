@@ -32,7 +32,6 @@ namespace Api
             services.Configure<ItemsDatabaseSettings>(Configuration.GetSection(nameof(ItemsDatabaseSettings)));
             services.AddSingleton<IItemsDatabaseSettings>(sp => sp.GetRequiredService<IOptions<ItemsDatabaseSettings>>().Value);
 
-            //services.AddSingleton<ItemsService>();
             services.AddScoped<IItemsService, ItemsService>();
             services.AddScoped<IWebsiteParser, WebsiteParser>();
 

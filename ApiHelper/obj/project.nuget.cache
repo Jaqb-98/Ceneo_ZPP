@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "NePmwVk6nuFxANcdMIBgjsbPm7pKOHH5zMJ05m+DAXhIMrkpRxMrzjlVxYaw8O2okQlY/n/Yx2s9YsCkVtwZZA==",
+  "success": true,
+  "projectFilePath": "E:\\Visual Studio workspace\\projekt zespołowy\\Ceneo_ZPP\\ApiHelper\\Helper.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Jaqb\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
+    "C:\\Users\\Jaqb\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Jaqb\\.nuget\\packages\\mongodb.bson\\2.12.0\\mongodb.bson.2.12.0.nupkg.sha512",
+    "C:\\Users\\Jaqb\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Jaqb\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\Jaqb\\.nuget\\packages\\newtonsoft.json.bson\\1.0.1\\newtonsoft.json.bson.1.0.1.nupkg.sha512",
+    "C:\\Users\\Jaqb\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

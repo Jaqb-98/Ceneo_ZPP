@@ -38,17 +38,16 @@ namespace Helper
         public static async Task SaveItemsToDB(List<Item> items)
         {
             string url = $"https://localhost:44343/api/Items/UpsertItems";
-            var httpContent = new StringContent(items.ToString(),Encoding.UTF8, "application/json");
-            using (HttpResponseMessage response = await ApiHelper.ApiClient.PutAsync(url, httpContent))
+
+            string jsonString = JsonConvert.SerializeObject(items);
+
+            using (HttpContent httpContent = new StringContent(jsonString))
             {
-                if (response.IsSuccessStatusCode)
-                    throw new Exception(response.ReasonPhrase);
+                httpContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+                HttpResponseMessage response =await ApiHelper.ApiClient.PutAsync(url, httpContent);
             }
 
-
-
         }
-
 
 
 
