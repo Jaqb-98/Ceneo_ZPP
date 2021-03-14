@@ -18,15 +18,15 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.0"
+          "netstandard2.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netstandard2.0": {
-            "targetAlias": "netstandard2.0",
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
             "projectReferences": {}
           }
         },
@@ -37,8 +37,8 @@
         }
       },
       "frameworks": {
-        "netstandard2.0": {
-          "targetAlias": "netstandard2.0",
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
           "dependencies": {
             "Microsoft.AspNet.WebApi.Client": {
               "target": "Package",
@@ -47,12 +47,6 @@
             "MongoDB.Bson": {
               "target": "Package",
               "version": "[2.12.0, )"
-            },
-            "NETStandard.Library": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.0.3, )",
-              "autoReferenced": true
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -69,6 +63,11 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
