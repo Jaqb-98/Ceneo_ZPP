@@ -12,7 +12,7 @@ using Api.Interfaces;
 namespace Api.Services
 {
 
-    public class WebsiteParser: IWebsiteParser
+    public class WebsiteParser : IWebsiteParser
     {
         /// <summary>
         /// Returns parsed items from Ceneo
@@ -80,14 +80,39 @@ namespace Api.Services
             if (String.IsNullOrEmpty(price))
                 price = node.GetAttributeValue("data-productminprice", String.Empty);
 
+            var parametersNode = node.SelectSingleNode(".//ul[@class='prod-params cat-prod-row__params']");
+
+            string txt;
+            Dictionary<string, string> dictionary = new Dictionary<string, string>();
+            if (parametersNode != null)
+            {
+                txt = parametersNode.InnerText.Trim('\r', '\n', ' ').TrimEnd('\r', '\n', ' ');
+                string[] splitTxt = txt.Split('\n');
+
+                if (!String.IsNullOrEmpty(splitTxt[0]))
+                    dictionary = splitTxt.Select(item => item.Trim(' ').Split(':')).ToDictionary(x => x[0], x => x[1].Trim('\r'));
+            }
+
+
+            var category = node.GetAttributeValue("data-GACategoryName", String.Empty);
+            var categoryNode = node.SelectSingleNode(".//a[@class='link link--accent']");
+            if (String.IsNullOrEmpty(category) && categoryNode != null)
+            {
+                category = categoryNode.InnerText;
+
+
+            }
+
             return new Item()
             {
                 PID = int.Parse(node.GetAttributeValue("data-pid", String.Empty)),
                 ProductName = name,
-                Category = node.GetAttributeValue("data-GACategoryName", String.Empty),
+                Category = category,
                 Price = PriceParser(price),
-                Image = img
+                Image = img,
+                Params = dictionary
             };
+
 
 
         }
