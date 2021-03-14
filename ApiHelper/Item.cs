@@ -1,4 +1,5 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
+using System.Collections.Generic;
 
 namespace Helper
 {
@@ -10,5 +11,6 @@ namespace Helper
         public string Category { get; set; }
         public decimal Price { get; set; }
         public string Image { get; set; }
+        public Dictionary<string, string> Params { get; set; }
     }
 }
