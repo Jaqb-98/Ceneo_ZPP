@@ -2072,7 +2072,7 @@
       },
       "Helper/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
           "Microsoft.AspNet.WebApi.Client": "5.2.7",
           "MongoDB.Bson": "2.12.0",

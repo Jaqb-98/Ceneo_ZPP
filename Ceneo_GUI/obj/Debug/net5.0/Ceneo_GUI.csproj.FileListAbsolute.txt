@@ -138,3 +138,5 @@ E:\Visual Studio workspace\projekt zespołowy\Ceneo_ZPP\Ceneo_GUI\bin\Debug\net5
 E:\Visual Studio workspace\projekt zespołowy\Ceneo_ZPP\Ceneo_GUI\bin\Debug\net5.0\Helper.dll
 E:\Visual Studio workspace\projekt zespołowy\Ceneo_ZPP\Ceneo_GUI\bin\Debug\net5.0\Helper.pdb
 E:\Visual Studio workspace\projekt zespołowy\Ceneo_ZPP\Ceneo_GUI\bin\Debug\net5.0\MongoDB.Bson.dll
+E:\Visual Studio workspace\projekt zespołowy\Ceneo_ZPP\Ceneo_GUI\obj\Debug\net5.0\test.SearchControl.resources
+E:\Visual Studio workspace\projekt zespołowy\Ceneo_ZPP\Ceneo_GUI\obj\Debug\net5.0\Ceneo_GUI.csproj.GenerateResource.cache
