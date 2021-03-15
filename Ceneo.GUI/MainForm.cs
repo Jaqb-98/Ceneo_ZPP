@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace test
+namespace GUI
 {
     public partial class MainForm : Form
     {
@@ -52,6 +52,7 @@ namespace test
         /// <param name="e"></param>
         private void btnSearch_click(object sender, EventArgs e)
         {
+            _page = 1;
             backgroundWorker1.RunWorkerAsync();
         }
 
@@ -62,10 +63,10 @@ namespace test
         /// Loads items from API and creates controls.
         /// </summary>
         /// <returns></returns>
-        private void CreateControls()
+        private  void CreateControls()
         {
 
-            var items = ItemsProcessor.LoadItems(txtbSearchBar.Text, _page).Result;
+            var items =  ItemsProcessor.LoadItems(txtbSearchBar.Text, _page).Result;
 
             _items = items;
 
@@ -109,8 +110,12 @@ namespace test
         /// <param name="e"></param>
         private async void BackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            PopulatePanelWithControls(_itemControls);
-            await ItemsProcessor.SaveItemsToDB(_items);
+            if (_itemControls != null)
+            {
+
+                PopulatePanelWithControls(_itemControls);
+                await ItemsProcessor.SaveItemsToDB(_items);
+            }
         }
 
         private void btnNextPage_Click(object sender, EventArgs e)

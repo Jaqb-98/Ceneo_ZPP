@@ -1,4 +1,4 @@
-﻿namespace test
+﻿namespace GUI
 {
     partial class MainForm
     {
