@@ -27,6 +27,9 @@ namespace Api.Services
         public Item Get(int id) =>
             _items.Find<Item>(item => item.PID == id).FirstOrDefault();
 
+        public List<Item> Get(string searchedPhrase) =>
+            _items.Find<Item>(item => item.Category.Contains(searchedPhrase) || item.ProductName.Contains(searchedPhrase)).ToList<Item>();
+
         public Item Create(Item item)
         {
             _items.InsertOne(item);
