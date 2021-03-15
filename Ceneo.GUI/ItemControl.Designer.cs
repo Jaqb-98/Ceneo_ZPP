@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.pbItemImage = new System.Windows.Forms.PictureBox();
-            this.ButtonLog = new System.Windows.Forms.Button();
+            this.btnGoToShop = new System.Windows.Forms.Button();
             this.txtbItemName = new System.Windows.Forms.TextBox();
             this.txtbItemCategory = new System.Windows.Forms.TextBox();
             this.txtbPrice = new System.Windows.Forms.TextBox();
@@ -50,22 +50,22 @@
             this.pbItemImage.MouseEnter += new System.EventHandler(this.ItemControl_MouseEnter);
             this.pbItemImage.MouseLeave += new System.EventHandler(this.ItemControl_MouseLeave);
             // 
-            // ButtonLog
+            // btnGoToShop
             // 
-            this.ButtonLog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(153)))), ((int)(((byte)(0)))));
-            this.ButtonLog.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ButtonLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ButtonLog.ForeColor = System.Drawing.Color.White;
-            this.ButtonLog.Location = new System.Drawing.Point(709, 102);
-            this.ButtonLog.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ButtonLog.Name = "ButtonLog";
-            this.ButtonLog.Size = new System.Drawing.Size(155, 48);
-            this.ButtonLog.TabIndex = 6;
-            this.ButtonLog.Text = "Porównaj Ceny!";
-            this.ButtonLog.UseVisualStyleBackColor = false;
-            this.ButtonLog.Click += new System.EventHandler(this.PorownajButton_Click);
-            this.ButtonLog.MouseEnter += new System.EventHandler(this.ItemControl_MouseEnter);
-            this.ButtonLog.MouseLeave += new System.EventHandler(this.ItemControl_MouseLeave);
+            this.btnGoToShop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(153)))), ((int)(((byte)(0)))));
+            this.btnGoToShop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGoToShop.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnGoToShop.ForeColor = System.Drawing.Color.White;
+            this.btnGoToShop.Location = new System.Drawing.Point(709, 102);
+            this.btnGoToShop.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnGoToShop.Name = "btnGoToShop";
+            this.btnGoToShop.Size = new System.Drawing.Size(155, 48);
+            this.btnGoToShop.TabIndex = 6;
+            this.btnGoToShop.Text = "Przejdz do sklepu";
+            this.btnGoToShop.UseVisualStyleBackColor = false;
+            this.btnGoToShop.Click += new System.EventHandler(this.PorownajButton_Click);
+            this.btnGoToShop.MouseEnter += new System.EventHandler(this.ItemControl_MouseEnter);
+            this.btnGoToShop.MouseLeave += new System.EventHandler(this.ItemControl_MouseLeave);
             // 
             // txtbItemName
             // 
@@ -134,7 +134,7 @@
             this.Controls.Add(this.txtbPrice);
             this.Controls.Add(this.txtbItemCategory);
             this.Controls.Add(this.txtbItemName);
-            this.Controls.Add(this.ButtonLog);
+            this.Controls.Add(this.btnGoToShop);
             this.Controls.Add(this.pbItemImage);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ItemControl";
@@ -151,7 +151,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pbItemImage;
-        private System.Windows.Forms.Button ButtonLog;
+        private System.Windows.Forms.Button btnGoToShop;
         private System.Windows.Forms.TextBox txtbItemName;
         private System.Windows.Forms.TextBox txtbItemCategory;
         private System.Windows.Forms.TextBox txtbPrice;
