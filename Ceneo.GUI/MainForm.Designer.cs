@@ -145,22 +145,26 @@
             // 
             // btnNextPage
             // 
+            this.btnNextPage.BackColor = System.Drawing.Color.Peru;
+            this.btnNextPage.ForeColor = System.Drawing.Color.Black;
             this.btnNextPage.Location = new System.Drawing.Point(1327, 819);
             this.btnNextPage.Name = "btnNextPage";
             this.btnNextPage.Size = new System.Drawing.Size(60, 55);
             this.btnNextPage.TabIndex = 11;
             this.btnNextPage.Text = "Next";
-            this.btnNextPage.UseVisualStyleBackColor = true;
+            this.btnNextPage.UseVisualStyleBackColor = false;
             this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
             // 
             // btnPreviousPage
             // 
+            this.btnPreviousPage.BackColor = System.Drawing.Color.Peru;
+            this.btnPreviousPage.ForeColor = System.Drawing.Color.Black;
             this.btnPreviousPage.Location = new System.Drawing.Point(1229, 819);
             this.btnPreviousPage.Name = "btnPreviousPage";
             this.btnPreviousPage.Size = new System.Drawing.Size(87, 55);
             this.btnPreviousPage.TabIndex = 12;
             this.btnPreviousPage.Text = "Previous";
-            this.btnPreviousPage.UseVisualStyleBackColor = true;
+            this.btnPreviousPage.UseVisualStyleBackColor = false;
             this.btnPreviousPage.Click += new System.EventHandler(this.btnPreviousPage_Click);
             // 
             // MainForm
