@@ -13,6 +13,8 @@ namespace Api.Interfaces
 
         Item Get(int id);
 
+        List<Item> Get(string searchedPhrase);
+
         Item Create(Item item);
 
         List<Item> CreateMany(List<Item> items);
