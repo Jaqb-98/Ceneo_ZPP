@@ -39,8 +39,18 @@ namespace Api.Services
 
         private HtmlNodeCollection GetNodeCollection(Uri url)
         {
+
             HtmlWeb web = new HtmlWeb();
-            var htmlDoc = web.Load(url);
+            HtmlDocument htmlDoc;
+            try
+            {
+                htmlDoc = web.Load(url);
+            }
+            catch (Exception)
+            {
+
+                throw new Exception();
+            }
 
             var productList = htmlDoc.DocumentNode.SelectNodes("//div[@class='cat-prod-row js_category-list-item js_clickHashData js_man-track-event ']");
 
@@ -103,6 +113,13 @@ namespace Api.Services
 
             }
 
+
+            
+
+
+
+
+
             return new Item()
             {
                 PID = int.Parse(node.GetAttributeValue("data-pid", String.Empty)),
@@ -110,11 +127,42 @@ namespace Api.Services
                 Category = category,
                 Price = PriceParser(price),
                 Image = img,
-                Params = dictionary
+                Params = dictionary,
+                ShopUrl = ShopUrlParser(node)
             };
 
 
 
+        }
+
+        private string ShopUrlParser(HtmlNode node)
+        {
+            var shopUrl = String.Empty;
+
+            try
+            {
+                shopUrl = node.SelectSingleNode(".//a[@class='js_seoUrl go-to-shop button button-primary js_force-conv js_clickHash']")
+                      .GetAttributes("href").FirstOrDefault().Value;
+
+                shopUrl = $"https://www.ceneo.pl{shopUrl}";
+
+            }
+            catch { }
+
+            try
+            {
+                shopUrl = node.SelectSingleNode(".//a[@class='js_seoUrl go-to-product button button-primary js_force-conv js_clickHash']")
+                      .GetAttributes("href").FirstOrDefault().Value;
+
+                shopUrl = $"https://www.ceneo.pl{shopUrl}";
+
+            }
+            catch { }
+
+
+
+
+            return shopUrl;
         }
 
         private decimal PriceParser(string price)
