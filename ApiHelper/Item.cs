@@ -12,5 +12,6 @@ namespace Helper
         public decimal Price { get; set; }
         public string Image { get; set; }
         public Dictionary<string, string> Params { get; set; }
+        public string ShopUrl { get; set; }
     }
 }
