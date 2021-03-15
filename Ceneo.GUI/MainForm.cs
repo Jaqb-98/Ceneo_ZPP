@@ -63,10 +63,14 @@ namespace GUI
         /// Loads items from API and creates controls.
         /// </summary>
         /// <returns></returns>
-        private  void CreateControls()
+        private void CreateControls(bool fromDB=false)
         {
+            List<Item> items;
 
-            var items =  ItemsProcessor.LoadItems(txtbSearchBar.Text, _page).Result;
+            if (fromDB == null || fromDB == false)
+                items = ItemsProcessor.LoadItems(txtbSearchBar.Text, _page).Result;
+            else
+                items = ItemsProcessor.LoadItemsFromDB(txtbSearchBar.Text).Result;
 
             _items = items;
 
@@ -79,6 +83,8 @@ namespace GUI
 
 
         }
+
+
 
 
         /// <summary>
@@ -100,7 +106,14 @@ namespace GUI
         /// <param name="e"></param>
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            CreateControls();
+            try
+            {
+                CreateControls();
+            }
+            catch (Exception)
+            {
+                CreateControls(true);
+            }
         }
 
         /// <summary>
