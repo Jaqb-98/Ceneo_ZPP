@@ -10,19 +10,7 @@
     <Compile Update="KontrolkaPorownaj.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="KontrolkaPorownaj_tlo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="ItemControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="KontrolkaSzukaj_tlo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="LoginControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="MainControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
