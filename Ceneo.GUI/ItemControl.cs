@@ -4,7 +4,7 @@ using System.Text;
 using System.Windows.Forms;
 using Helper;
 
-namespace test
+namespace GUI
 {
     public partial class ItemControl : UserControl
     {
@@ -51,8 +51,16 @@ namespace test
             {
                 var sb = new StringBuilder();
                 sb.Append("http:").Append(Item.Image);
+                try
+                {
+                    pbItemImage.LoadAsync(sb.ToString());
 
-                pbItemImage.LoadAsync(sb.ToString());
+                }
+                catch (Exception)
+                {
+
+                    pbItemImage.Image = Ceneo.GUI.Properties.Resources.image_placeholder;
+                }
             }
         }
 
