@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 using Helper;
@@ -28,7 +30,7 @@ namespace GUI
             Item.Category = item.Category;
             Item.Image = item.Image;
             Item.Params = item.Params;
-
+            Item.ShopUrl = item.ShopUrl;
             SetValues();
         }
 
@@ -42,9 +44,13 @@ namespace GUI
             txtbItemName.Text = Item.ProductName;
             txtbPrice.Text = $"{Item.Price.ToString()} zł";
 
-            foreach (var item in Item.Params)
+            if (Item.Params != null)
             {
-                richTextBoxParameters.Text += $"{item.Key}: {item.Value}\n";
+                foreach (var item in Item.Params)
+                {
+
+                    richTextBoxParameters.Text += $"{item.Key}: {item.Value}\n";
+                }
             }
 
             if (Item.Image != null)
@@ -75,9 +81,38 @@ namespace GUI
 
         private void PorownajButton_Click(object sender, EventArgs e)
         {
+            if (!String.IsNullOrEmpty(Item.ShopUrl))
+                OpenBrowser(Item.ShopUrl);
 
+        }
 
+        private void OpenBrowser(string url)
+        {
 
+            try
+            {
+                Process.Start(url);
+            }
+            catch
+            {
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                {
+                    url = url.Replace("&", "^&");
+                    Process.Start(new ProcessStartInfo("cmd", $"/c start {url}") { CreateNoWindow = true });
+                }
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+                {
+                    Process.Start("xdg-open", url);
+                }
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+                {
+                    Process.Start("open", url);
+                }
+                else
+                {
+                    throw;
+                }
+            }
         }
 
         private void SearchControl2_Resize(object sender, EventArgs e)
