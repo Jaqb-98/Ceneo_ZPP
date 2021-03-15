@@ -5,10 +5,5 @@ Project.sln
 *.cache
 Api\obj\Debug
 *.cache
-ApiHelper/obj/Debug/netstandard2.1/Helper.csprojAssemblyReference.cache
-Api/obj/project.nuget.cache
-Api/obj/project.assets.json
-Api/obj/Debug/netcoreapp3.1/Api.csprojAssemblyReference.cache
-Api/obj/Debug/netcoreapp3.1/Api.assets.cache
-Api/obj/Api.csproj.nuget.dgspec.json
-ApiHelper/obj/Debug/netstandard2.1/Helper.csprojAssemblyReference.cache
+
+
