@@ -39,6 +39,18 @@ namespace Api.Controllers
         }
 
         [HttpGet]
+        [Route("GetFromDB")]
+        public ActionResult<List<Item>> Get(string searchedPhrase)
+        {
+            var items = _itemsService.Get(searchedPhrase);
+
+            if (items == null)
+                return NotFound();
+
+            return items;
+        }
+
+        [HttpGet]
         [Route("Parse")]
         public ActionResult<List<Item>> Get(string name, int page)
         {
