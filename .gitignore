@@ -3,7 +3,6 @@ obj
 .vs
 Project.sln
 *.cache
-Api\obj\Debug
-*.cache
-
+Api/*/obj
+**/obj
 
