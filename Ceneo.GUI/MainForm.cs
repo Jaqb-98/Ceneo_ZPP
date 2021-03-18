@@ -15,9 +15,13 @@ namespace GUI
     {
         #region Private variables
 
-        private ItemControl[] _itemControls;
+        private List<ItemControl> _itemControls = new List<ItemControl>();
+        private List<ItemControl>[] _PagedItemControls = new List<ItemControl>[10];
         private List<Item> _items;
         private int _page = 1;
+        private int _subpage = 0;
+        private int _maxSubPage;
+        private int _perPage = 10;
 
         #endregion
 
@@ -40,10 +44,6 @@ namespace GUI
 
         }
 
-        private void LoginButton_Click(object sender, EventArgs e)
-        {
-
-        }
 
         /// <summary>
         /// btn Search event calls backgroundWorker.RunWorkerAsync()
@@ -53,7 +53,8 @@ namespace GUI
         private void btnSearch_click(object sender, EventArgs e)
         {
             _page = 1;
-            backgroundWorker1.RunWorkerAsync();
+            _PagedItemControls = new List<ItemControl>[10];
+            WorkInBackground();
         }
 
         #endregion
@@ -63,25 +64,45 @@ namespace GUI
         /// Loads items from API and creates controls.
         /// </summary>
         /// <returns></returns>
-        private void CreateControls(bool fromDB=false)
+        private void CreateControls()
         {
             List<Item> items;
-
-            if (fromDB == null || fromDB == false)
-                items = ItemsProcessor.LoadItems(txtbSearchBar.Text, _page).Result;
-            else
-                items = ItemsProcessor.LoadItemsFromDB(txtbSearchBar.Text).Result;
+            try
+            {
+                items = GetItems();
+            }
+            catch (Exception)
+            {
+                items = GetItems(true);
+            }
 
             _items = items;
+            _maxSubPage = (int)Math.Ceiling((double)_items.Count / _perPage) - 1;
 
+
+            CreatePageControls(_subpage, _perPage);
+
+        }
+
+        private void CreatePageControls(int subpage, int perPage)
+        {
             var itemControls = new List<ItemControl>();
-
-            foreach (var item in items)
+            foreach (var item in GetPage(_items, subpage, perPage))
+            {
                 itemControls.Add(new ItemControl(item));
+            }
 
-            _itemControls = itemControls.ToArray();
+            _PagedItemControls[_subpage] = itemControls;
+        }
 
 
+
+        private List<Item> GetItems(bool fromDB = false)
+        {
+            List<Item> items = !fromDB
+                ? ItemsProcessor.LoadItems(txtbSearchBar.Text, _page).Result
+                : ItemsProcessor.LoadItemsFromDB(txtbSearchBar.Text).Result;
+            return items;
         }
 
 
@@ -91,12 +112,12 @@ namespace GUI
         /// Populates flowLayoutPanel with ItemControls
         /// </summary>
         /// <param name="itemControls"></param>
-        private void PopulatePanelWithControls(ItemControl[] itemControls)
+        private void PopulatePanelWithControls()
         {
             if (flItemListPanel.Controls.Count > 0)
                 flItemListPanel.Controls.Clear();
 
-            flItemListPanel.Controls.AddRange(itemControls);
+            flItemListPanel.Controls.AddRange(_PagedItemControls[_subpage].ToArray());
         }
 
         /// <summary>
@@ -106,14 +127,17 @@ namespace GUI
         /// <param name="e"></param>
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            try
-            {
-                CreateControls();
-            }
-            catch (Exception)
-            {
-                CreateControls(true);
-            }
+            CreateControls();
+        }
+
+        private void WorkInBackground()
+        {
+            btnSearch.Enabled = false;
+            btnNextPage.Enabled = false;
+            btnPreviousPage.Enabled = false;
+
+            backgroundWorker1.RunWorkerAsync();
+
         }
 
         /// <summary>
@@ -123,27 +147,75 @@ namespace GUI
         /// <param name="e"></param>
         private async void BackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            btnSearch.Enabled = true;
+            btnNextPage.Enabled = true;
+            btnPreviousPage.Enabled = true;
+
             if (_itemControls != null)
             {
-
-                PopulatePanelWithControls(_itemControls);
+                PopulatePanelWithControls();
                 await ItemsProcessor.SaveItemsToDB(_items);
             }
+
+           
         }
 
         private void btnNextPage_Click(object sender, EventArgs e)
         {
-            _page++;
-            backgroundWorker1.RunWorkerAsync();
+            if (_subpage + 1 <= _maxSubPage)
+            {
+                _subpage++;
+            }
+            else
+            {
+                _subpage = 0;
+                _page++;
+                _PagedItemControls = new List<ItemControl>[3];
+
+            }
+
+            if (_PagedItemControls[_subpage] == null)
+                WorkInBackground();
+            else
+                PopulatePanelWithControls();
+
+
         }
 
         private void btnPreviousPage_Click(object sender, EventArgs e)
         {
-            if (_page >= 2)
+            if (_subpage > 0)
             {
-                _page--;
-                backgroundWorker1.RunWorkerAsync();
+                _subpage--;
             }
+            else
+            {
+
+                if (_page >= _maxSubPage)
+                {
+                    _page--;
+                    _subpage = _maxSubPage;
+                    _PagedItemControls = new List<ItemControl>[_maxSubPage + 1];
+                }
+            }
+
+            if (_PagedItemControls[_subpage] == null)
+                WorkInBackground();
+            else
+                PopulatePanelWithControls();
+
+
         }
+
+        private IList<Item> GetPage(IList<Item> list, int page, int pageSize)
+        {
+            return list.Skip(page * pageSize).Take(pageSize).ToList();
+        }
+
+
+
+
     }
+
+
 }
