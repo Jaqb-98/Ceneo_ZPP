@@ -41,7 +41,7 @@ namespace Helper
             {
                 if (responseMessage.IsSuccessStatusCode)
                 {
-                    List<Item> items = await responseMessage.Content.ReadAsAsync<List<Item>>();
+                    var items = await responseMessage.Content.ReadAsAsync<List<Item>>();
 
                     return items;
                 }
@@ -57,10 +57,11 @@ namespace Helper
         public static async Task SaveItemsToDB(List<Item> items)
         {
             string url = $"https://localhost:44343/api/Items/UpsertItems";
-            var httpContent = new StringContent(items.ToString(), Encoding.UTF8, "application/json");
+            var itemsJson = JsonConvert.SerializeObject(items);
+            var httpContent = new StringContent(itemsJson, Encoding.UTF8, "application/json");
             using (HttpResponseMessage response = await ApiHelper.ApiClient.PutAsync(url, httpContent))
             {
-                if (response.IsSuccessStatusCode)
+                if (!response.IsSuccessStatusCode)
                     throw new Exception(response.ReasonPhrase);
             }
 
