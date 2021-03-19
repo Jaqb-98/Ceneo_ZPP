@@ -5,4 +5,10 @@ Project.sln
 *.cache
 Api/*/obj
 **/obj
+/Api/obj
+/Api/bin
+/ApiHelper/obj
+/ApiHelper/bin
+/Ceneo.GUI/bin
+/Ceneo.GUI/obj
 
