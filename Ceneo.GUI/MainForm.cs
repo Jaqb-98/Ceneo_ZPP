@@ -22,6 +22,8 @@ namespace GUI
         private int _subpage = 0;
         private int _maxSubPage;
         private int _perPage = 10;
+        private int _pageCount = 1;
+
 
         #endregion
 
@@ -35,6 +37,7 @@ namespace GUI
             InitializeComponent();
             ApiHelper.InitializeClient();
             backgroundWorker1.DoWork += new DoWorkEventHandler(backgroundWorker1_DoWork);
+            UpdatePageLabel();
         }
         #endregion
 
@@ -53,8 +56,11 @@ namespace GUI
         private void btnSearch_click(object sender, EventArgs e)
         {
             _page = 1;
+            _pageCount = 1;
+            _subpage = 0;
             _PagedItemControls = new List<ItemControl>[10];
             WorkInBackground();
+            UpdatePageLabel();
         }
 
         #endregion
@@ -89,7 +95,8 @@ namespace GUI
             var itemControls = new List<ItemControl>();
             foreach (var item in GetPage(_items, subpage, perPage))
             {
-                itemControls.Add(new ItemControl(item));
+                var newItemControl = new ItemControl(item);
+                itemControls.Add(newItemControl); ;
             }
 
             _PagedItemControls[_subpage] = itemControls;
@@ -117,7 +124,16 @@ namespace GUI
             if (flItemListPanel.Controls.Count > 0)
                 flItemListPanel.Controls.Clear();
 
+
             flItemListPanel.Controls.AddRange(_PagedItemControls[_subpage].ToArray());
+
+            
+
+            for (int i = 0; i < flItemListPanel.Controls.Count; i++)
+            {
+                flItemListPanel.Controls[i].Dock = DockStyle.None;
+                flItemListPanel.Controls[i].Width = flItemListPanel.DisplayRectangle.Width - flItemListPanel.Controls[i].Margin.Horizontal;
+            }
         }
 
         /// <summary>
@@ -136,6 +152,8 @@ namespace GUI
             btnNextPage.Enabled = false;
             btnPreviousPage.Enabled = false;
 
+            spinningCircles1.Visible = true;
+
             backgroundWorker1.RunWorkerAsync();
 
         }
@@ -151,27 +169,26 @@ namespace GUI
             btnNextPage.Enabled = true;
             btnPreviousPage.Enabled = true;
 
+            spinningCircles1.Visible = false;
+
             if (_itemControls != null)
             {
                 PopulatePanelWithControls();
                 await ItemsProcessor.SaveItemsToDB(_items);
             }
 
-           
+
         }
 
         private void btnNextPage_Click(object sender, EventArgs e)
         {
             if (_subpage + 1 <= _maxSubPage)
-            {
                 _subpage++;
-            }
             else
             {
                 _subpage = 0;
                 _page++;
                 _PagedItemControls = new List<ItemControl>[3];
-
             }
 
             if (_PagedItemControls[_subpage] == null)
@@ -179,18 +196,16 @@ namespace GUI
             else
                 PopulatePanelWithControls();
 
-
+            _pageCount++;
+            UpdatePageLabel();
         }
 
         private void btnPreviousPage_Click(object sender, EventArgs e)
         {
             if (_subpage > 0)
-            {
                 _subpage--;
-            }
             else
             {
-
                 if (_page >= _maxSubPage)
                 {
                     _page--;
@@ -204,7 +219,8 @@ namespace GUI
             else
                 PopulatePanelWithControls();
 
-
+            _pageCount--;
+            UpdatePageLabel();
         }
 
         private IList<Item> GetPage(IList<Item> list, int page, int pageSize)
@@ -212,9 +228,12 @@ namespace GUI
             return list.Skip(page * pageSize).Take(pageSize).ToList();
         }
 
+        private void UpdatePageLabel()
+        {
+            lblPageNumber.Text = _pageCount.ToString();
+        }
 
-
-
+   
     }
 
 
