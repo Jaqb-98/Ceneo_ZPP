@@ -22,6 +22,7 @@ namespace GUI
         }
         public ItemControl(Item item)
         {
+
             InitializeComponent();
 
             Item = new Item();
@@ -31,6 +32,8 @@ namespace GUI
             Item.Image = item.Image;
             Item.Params = item.Params;
             Item.ShopUrl = item.ShopUrl;
+
+            
             SetValues();
         }
 
@@ -42,7 +45,7 @@ namespace GUI
         {
             txtbItemCategory.Text = $"Kategoria: {Item.Category}";
             txtbItemName.Text = Item.ProductName;
-            txtbPrice.Text = $"{Item.Price.ToString()} zł";
+            txtPrice.Text = $"{Item.Price.ToString()} zł";
 
             if (Item.Params != null)
             {
@@ -74,12 +77,8 @@ namespace GUI
 
 
         #region Events
-        private void button1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void PorownajButton_Click(object sender, EventArgs e)
+        private void GoToShopButton_Click(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(Item.ShopUrl))
                 OpenBrowser(Item.ShopUrl);
@@ -127,7 +126,7 @@ namespace GUI
             this.BackColor = Color.Silver;
             txtbItemCategory.BackColor = Color.Silver;
             txtbItemName.BackColor = Color.Silver;
-            txtbPrice.BackColor = Color.Silver;
+            txtPrice.BackColor = Color.Silver;
             richTextBoxParameters.BackColor = Color.Silver;
         }
 
@@ -136,10 +135,12 @@ namespace GUI
             this.BackColor = Color.White;
             txtbItemCategory.BackColor = Color.White;
             txtbItemName.BackColor = Color.White;
-            txtbPrice.BackColor = Color.White;
+            txtPrice.BackColor = Color.White;
             richTextBoxParameters.BackColor = Color.White;
         }
 
+      
 
+   
     }
 }
