@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>Ceneo.Api</name>
+        <name>Api</name>
     </assembly>
     <members>
         <member name="T:Api.Controllers.ItemsController">
@@ -41,28 +41,28 @@
             <param name="searchedPhrase"></param>
             <returns></returns>
         </member>
-        <member name="M:Api.Interfaces.IItemsService.Create(ApiHelper.Item)">
+        <member name="M:Api.Interfaces.IItemsService.Create(Helper.Item)">
             <summary>
             Puts new item into collection
             </summary>
             <param name="item"></param>
             <returns></returns>
         </member>
-        <member name="M:Api.Interfaces.IItemsService.CreateMany(System.Collections.Generic.List{ApiHelper.Item})">
+        <member name="M:Api.Interfaces.IItemsService.CreateMany(System.Collections.Generic.List{Helper.Item})">
             <summary>
             Puts list of items into collection
             </summary>
             <param name="items"></param>
             <returns></returns>
         </member>
-        <member name="M:Api.Interfaces.IItemsService.Update(System.Int32,ApiHelper.Item)">
+        <member name="M:Api.Interfaces.IItemsService.Update(System.Int32,Helper.Item)">
             <summary>
             Finds item with id form parameters and replaces it with ItemIn
             </summary>
             <param name="id"></param>
             <param name="ItemIn"></param>
         </member>
-        <member name="M:Api.Interfaces.IItemsService.Remove(ApiHelper.Item)">
+        <member name="M:Api.Interfaces.IItemsService.Remove(Helper.Item)">
             <summary>
             Removes ItemIn from collection
             </summary>
@@ -74,14 +74,14 @@
             </summary>
             <param name="id"></param>
         </member>
-        <member name="M:Api.Interfaces.IItemsService.Upsert(System.Int32,ApiHelper.Item)">
+        <member name="M:Api.Interfaces.IItemsService.Upsert(System.Int32,Helper.Item)">
             <summary>
             Replaces item with matching id with ItemIn. If item with id from parameters doesn't exist, creates new item ItemIn
             </summary>
             <param name="id"></param>
             <param name="ItemIn"></param>
         </member>
-        <member name="M:Api.Interfaces.IItemsService.Upsert(System.Collections.Generic.List{ApiHelper.Item})">
+        <member name="M:Api.Interfaces.IItemsService.Upsert(System.Collections.Generic.List{Helper.Item})">
             <summary>
             Performs upsert operation on List of Items
             </summary>
