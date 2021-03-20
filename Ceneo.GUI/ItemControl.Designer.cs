@@ -173,7 +173,6 @@
             this.Size = new System.Drawing.Size(881, 154);
             this.MouseEnter += new System.EventHandler(this.ItemControl_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.ItemControl_MouseLeave);
-            this.Resize += new System.EventHandler(this.SearchControl2_Resize);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbItemImage)).EndInit();
