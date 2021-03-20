@@ -15,7 +15,6 @@ namespace GUI
     {
         #region Private variables
 
-        private List<ItemControl> _itemControls = new List<ItemControl>();
         private List<ItemControl>[] _PagedItemControls = new List<ItemControl>[10];
         private List<Item> _items;
         private int _page = 1;
