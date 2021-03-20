@@ -1,16 +1,116 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>Api</name>
+        <name>Ceneo.Api</name>
     </assembly>
     <members>
-        <member name="M:Api.Services.WebsiteParser.GetItems(System.String,System.Int32)">
+        <member name="T:Api.Controllers.ItemsController">
+            <summary>
+            Provides REST operations
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.ItemsController.#ctor(Api.Interfaces.IItemsService,Api.Interfaces.IWebsiteParser)">
+            <summary>
+            Controller constructor with services as parameters
+            </summary>
+            <param name="itemsService"></param>
+            <param name="websiteParser"></param>
+        </member>
+        <member name="T:Api.Interfaces.IItemsService">
+            <summary>
+            Provides operations on batabase
+            </summary>
+        </member>
+        <member name="M:Api.Interfaces.IItemsService.Get">
+            <summary>
+            Returns all items from collection
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Interfaces.IItemsService.Get(System.Int32)">
+            <summary>
+            Returns item with id specified in parameter
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Interfaces.IItemsService.Get(System.String)">
+            <summary>
+            Returns all items form collection that has searchedPhrase in Name or Category
+            </summary>
+            <param name="searchedPhrase"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Interfaces.IItemsService.Create(ApiHelper.Item)">
+            <summary>
+            Puts new item into collection
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Interfaces.IItemsService.CreateMany(System.Collections.Generic.List{ApiHelper.Item})">
+            <summary>
+            Puts list of items into collection
+            </summary>
+            <param name="items"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Interfaces.IItemsService.Update(System.Int32,ApiHelper.Item)">
+            <summary>
+            Finds item with id form parameters and replaces it with ItemIn
+            </summary>
+            <param name="id"></param>
+            <param name="ItemIn"></param>
+        </member>
+        <member name="M:Api.Interfaces.IItemsService.Remove(ApiHelper.Item)">
+            <summary>
+            Removes ItemIn from collection
+            </summary>
+            <param name="ItemIn"></param>
+        </member>
+        <member name="M:Api.Interfaces.IItemsService.Remove(System.Int32)">
+            <summary>
+            Removes item with matching id
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Api.Interfaces.IItemsService.Upsert(System.Int32,ApiHelper.Item)">
+            <summary>
+            Replaces item with matching id with ItemIn. If item with id from parameters doesn't exist, creates new item ItemIn
+            </summary>
+            <param name="id"></param>
+            <param name="ItemIn"></param>
+        </member>
+        <member name="M:Api.Interfaces.IItemsService.Upsert(System.Collections.Generic.List{ApiHelper.Item})">
+            <summary>
+            Performs upsert operation on List of Items
+            </summary>
+            <param name="items"></param>
+        </member>
+        <member name="T:Api.Interfaces.IWebsiteParser">
+            <summary>
+            Provides method to load item objects from ceneo.pl
+            </summary>
+        </member>
+        <member name="M:Api.Interfaces.IWebsiteParser.GetItems(System.String,System.Int32)">
             <summary>
             Returns parsed items from Ceneo
             </summary>
             <param name="searchedItem">Name of searching product</param>
             <param name="page">Number of page on website</param>
             <returns>List of items</returns>
+        </member>
+        <member name="T:Api.Services.ItemsService">
+            <inheritdoc cref="T:Api.Interfaces.IItemsService"/>
+        </member>
+        <member name="M:Api.Services.ItemsService.#ctor(Api.Models.IItemsDatabaseSettings)">
+            <summary>
+            ItemsService constructor
+            </summary>
+            <param name="settings"></param>
+        </member>
+        <member name="T:Api.Services.WebsiteParser">
+            <inheritdoc cref="T:Api.Interfaces.IWebsiteParser"/>
         </member>
     </members>
 </doc>
