@@ -1,45 +1,45 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>Ceneo.ApiHelper</name>
+        <name>Helper</name>
     </assembly>
     <members>
-        <member name="T:ApiHelper.ApiHelper">
+        <member name="T:Helper.ApiHelper">
             <summary>
             Static class that provides access to HttpCLient
             </summary>
         </member>
-        <member name="P:ApiHelper.ApiHelper.ApiClient">
+        <member name="P:Helper.ApiHelper.ApiClient">
             <summary>
             Static instance of HttpClient
             </summary>
         </member>
-        <member name="M:ApiHelper.ApiHelper.InitializeClient">
+        <member name="M:Helper.ApiHelper.InitializeClient">
             <summary>
             Initializes HttpClient
             </summary>
         </member>
-        <member name="T:ApiHelper.Item">
+        <member name="T:Helper.Item">
             <summary>
             Item data model
             </summary>
         </member>
-        <member name="P:ApiHelper.Item.PID">
+        <member name="P:Helper.Item.PID">
             <summary>
             Item Id
             </summary>
         </member>
-        <member name="P:ApiHelper.Item.Image">
+        <member name="P:Helper.Item.Image">
             <summary>
             Image url
             </summary>
         </member>
-        <member name="T:ApiHelper.ItemsProcessor">
+        <member name="T:Helper.ItemsProcessor">
             <summary>
             Static class that provides methods to consume REST API
             </summary>
         </member>
-        <member name="M:ApiHelper.ItemsProcessor.LoadItems(System.String,System.Int32)">
+        <member name="M:Helper.ItemsProcessor.LoadItems(System.String,System.Int32)">
             <summary>
             Loads Items from ceneo.pl that natch searchingPhrase
             </summary>
@@ -47,14 +47,14 @@
             <param name="page"></param>
             <returns></returns>
         </member>
-        <member name="M:ApiHelper.ItemsProcessor.LoadItemsFromDB(System.String)">
+        <member name="M:Helper.ItemsProcessor.LoadItemsFromDB(System.String)">
             <summary>
             Loads Items from database that match searchingPhrase
             </summary>
             <param name="searchingPhrase"></param>
             <returns></returns>
         </member>
-        <member name="M:ApiHelper.ItemsProcessor.SaveItemsToDB(System.Collections.Generic.List{ApiHelper.Item})">
+        <member name="M:Helper.ItemsProcessor.SaveItemsToDB(System.Collections.Generic.List{Helper.Item})">
             <summary>
             Saves list of items to database
             </summary>
