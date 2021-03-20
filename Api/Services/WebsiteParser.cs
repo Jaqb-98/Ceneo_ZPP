@@ -15,7 +15,7 @@ namespace Api.Services
     ///<inheritdoc cref="IWebsiteParser"/>
     public class WebsiteParser : IWebsiteParser
     {
-       
+
         public List<Item> GetItems(string searchedItem, int page)
         {
 
@@ -110,7 +110,7 @@ namespace Api.Services
             }
 
 
-            
+
 
 
 
@@ -143,17 +143,16 @@ namespace Api.Services
                 shopUrl = $"https://www.ceneo.pl{shopUrl}";
 
             }
-            catch { }
-
-            try
+            catch
             {
+
                 shopUrl = node.SelectSingleNode(".//a[@class='js_seoUrl go-to-product button button-primary js_force-conv js_clickHash']")
                       .GetAttributes("href").FirstOrDefault().Value;
 
                 shopUrl = $"https://www.ceneo.pl{shopUrl}";
-
             }
-            catch { }
+
+        
 
 
 
