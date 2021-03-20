@@ -102,7 +102,11 @@ namespace GUI
         }
 
 
-
+        /// <summary>
+        /// Gets items from website or database
+        /// </summary>
+        /// <param name="fromDB"></param>
+        /// <returns></returns>
         private List<Item> GetItems(bool fromDB = false)
         {
             List<Item> items = !fromDB
@@ -117,7 +121,6 @@ namespace GUI
         /// <summary>
         /// Populates flowLayoutPanel with ItemControls
         /// </summary>
-        /// <param name="itemControls"></param>
         private void PopulatePanelWithControls()
         {
             if (flItemListPanel.Controls.Count > 0)
@@ -145,6 +148,9 @@ namespace GUI
             CreateControls();
         }
 
+        /// <summary>
+        /// Calls background worker
+        /// </summary>
         private void WorkInBackground()
         {
             btnSearch.Enabled = false;
@@ -170,7 +176,7 @@ namespace GUI
 
             spinningCircles1.Visible = false;
 
-            if (_itemControls != null)
+            if (_items != null)
             {
                 PopulatePanelWithControls();
                 await ItemsProcessor.SaveItemsToDB(_items);
