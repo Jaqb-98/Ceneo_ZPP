@@ -10,6 +10,9 @@ using Api.Interfaces;
 
 namespace Api.Controllers
 {
+    /// <summary>
+    /// Provides REST operations
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class ItemsController : ControllerBase
@@ -17,11 +20,18 @@ namespace Api.Controllers
         private readonly IItemsService _itemsService;
         private readonly IWebsiteParser _websiteParser;
 
+
+        /// <summary>
+        /// Controller constructor with services as parameters
+        /// </summary>
+        /// <param name="itemsService"></param>
+        /// <param name="websiteParser"></param>
         public ItemsController(IItemsService itemsService, IWebsiteParser websiteParser)
         {
             _itemsService = itemsService;
             _websiteParser = websiteParser;
         }
+
 
         [HttpGet]
         public ActionResult<List<Item>> Get() =>

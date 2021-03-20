@@ -9,10 +9,15 @@ using Api.Interfaces;
 namespace Api.Services
 {
 
+    /// <inheritdoc cref="IItemsService"/>
     public class ItemsService : IItemsService
     {
         private readonly IMongoCollection<Item> _items;
 
+        /// <summary>
+        /// ItemsService constructor
+        /// </summary>
+        /// <param name="settings"></param>
         public ItemsService(IItemsDatabaseSettings settings)
         {
             var client = new MongoClient(settings.ConnectionString);
@@ -54,6 +59,7 @@ namespace Api.Services
 
         public void Upsert(int id, Item ItemIn) =>
             _items.ReplaceOne(new BsonDocument("_id", id), ItemIn, new ReplaceOptions { IsUpsert = true });
+
 
         public void Upsert(List<Item> items)
         {

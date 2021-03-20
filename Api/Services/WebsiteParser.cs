@@ -12,14 +12,10 @@ using Api.Interfaces;
 namespace Api.Services
 {
 
+    ///<inheritdoc cref="IWebsiteParser"/>
     public class WebsiteParser : IWebsiteParser
     {
-        /// <summary>
-        /// Returns parsed items from Ceneo
-        /// </summary>
-        /// <param name="searchedItem">Name of searching product</param>
-        /// <param name="page">Number of page on website</param>
-        /// <returns>List of items</returns>
+       
         public List<Item> GetItems(string searchedItem, int page)
         {
 
