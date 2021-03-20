@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Ceneo.ApiHelper</name>
+    </assembly>
+    <members>
+        <member name="T:ApiHelper.ApiHelper">
+            <summary>
+            Static class that provides access to HttpCLient
+            </summary>
+        </member>
+        <member name="P:ApiHelper.ApiHelper.ApiClient">
+            <summary>
+            Static instance of HttpClient
+            </summary>
+        </member>
+        <member name="M:ApiHelper.ApiHelper.InitializeClient">
+            <summary>
+            Initializes HttpClient
+            </summary>
+        </member>
+        <member name="T:ApiHelper.Item">
+            <summary>
+            Item data model
+            </summary>
+        </member>
+        <member name="P:ApiHelper.Item.PID">
+            <summary>
+            Item Id
+            </summary>
+        </member>
+        <member name="P:ApiHelper.Item.Image">
+            <summary>
+            Image url
+            </summary>
+        </member>
+        <member name="T:ApiHelper.ItemsProcessor">
+            <summary>
+            Static class that provides methods to consume REST API
+            </summary>
+        </member>
+        <member name="M:ApiHelper.ItemsProcessor.LoadItems(System.String,System.Int32)">
+            <summary>
+            Loads Items from ceneo.pl that natch searchingPhrase
+            </summary>
+            <param name="searchingPhrase"></param>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiHelper.ItemsProcessor.LoadItemsFromDB(System.String)">
+            <summary>
+            Loads Items from database that match searchingPhrase
+            </summary>
+            <param name="searchingPhrase"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiHelper.ItemsProcessor.SaveItemsToDB(System.Collections.Generic.List{ApiHelper.Item})">
+            <summary>
+            Saves list of items to database
+            </summary>
+            <param name="items"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

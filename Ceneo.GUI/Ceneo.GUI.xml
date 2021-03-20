@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Ceneo.GUI</name>
+    </assembly>
+    <members>
+        <member name="F:GUI.ItemControl.components">
+            <summary> 
+            Wymagana zmienna projektanta.
+            </summary>
+        </member>
+        <member name="M:GUI.ItemControl.Dispose(System.Boolean)">
+            <summary> 
+            Wyczyść wszystkie używane zasoby.
+            </summary>
+            <param name="disposing">prawda, jeżeli zarządzane zasoby powinny zostać zlikwidowane; Fałsz w przeciwnym wypadku.</param>
+        </member>
+        <member name="M:GUI.ItemControl.InitializeComponent">
+            <summary> 
+            Metoda wymagana do obsługi projektanta — nie należy modyfikować 
+            jej zawartości w edytorze kodu.
+            </summary>
+        </member>
+        <member name="M:GUI.MainForm.#ctor">
+            <summary>
+            Main form constructor with initialization of Http Client
+            </summary>
+            
+        </member>
+        <member name="M:GUI.MainForm.btnSearch_click(System.Object,System.EventArgs)">
+            <summary>
+            btn Search event calls backgroundWorker.RunWorkerAsync()
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:GUI.MainForm.CreateControls">
+            <summary>
+            Loads items from API and creates controls.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GUI.MainForm.GetItems(System.Boolean)">
+            <summary>
+            Gets items from website or database
+            </summary>
+            <param name="fromDB"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GUI.MainForm.PopulatePanelWithControls">
+            <summary>
+            Populates flowLayoutPanel with ItemControls
+            </summary>
+        </member>
+        <member name="M:GUI.MainForm.backgroundWorker1_DoWork(System.Object,System.ComponentModel.DoWorkEventArgs)">
+            <summary>
+            Creates controls in backgroundworker
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:GUI.MainForm.WorkInBackground">
+            <summary>
+            Calls background worker
+            </summary>
+        </member>
+        <member name="M:GUI.MainForm.BackgroundWorker_RunWorkerCompleted(System.Object,System.ComponentModel.RunWorkerCompletedEventArgs)">
+            <summary>
+            Populates panel with controls and upserts items to DB after backgroundworker_DoWork is completed
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:GUI.MainForm.components">
+            <summary>
+            Wymagana zmienna projektanta.
+            </summary>
+        </member>
+        <member name="M:GUI.MainForm.Dispose(System.Boolean)">
+            <summary>
+            Wyczyść wszystkie używane zasoby.
+            </summary>
+            <param name="disposing">prawda, jeżeli zarządzane zasoby powinny zostać zlikwidowane; Fałsz w przeciwnym wypadku.</param>
+        </member>
+        <member name="M:GUI.MainForm.InitializeComponent">
+            <summary>
+            Metoda wymagana do obsługi projektanta — nie należy modyfikować
+            jej zawartości w edytorze kodu.
+            </summary>
+        </member>
+        <member name="M:GUI.Program.Main">
+            <summary>
+            Główny punkt wejścia dla aplikacji.
+            </summary>
+        </member>
+        <member name="T:Ceneo.GUI.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Ceneo.GUI.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Ceneo.GUI.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Ceneo.GUI.Properties.Resources.image_placeholder">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="F:Ceneo.GUI.SpinningCircles.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Ceneo.GUI.SpinningCircles.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Ceneo.GUI.SpinningCircles.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>
