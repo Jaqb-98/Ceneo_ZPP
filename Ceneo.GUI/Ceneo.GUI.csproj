@@ -8,6 +8,7 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>E:\Visual Studio workspace\projekt zespołowy\Ceneo_ZPP\Ceneo.GUI\Ceneo.GUI.xml</DocumentationFile>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
 
   <ItemGroup>
