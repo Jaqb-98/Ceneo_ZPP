@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
-using Helper;
+using ApiHelper;
 
 namespace GUI
 {
@@ -33,7 +33,7 @@ namespace GUI
             Item.Params = item.Params;
             Item.ShopUrl = item.ShopUrl;
 
-            
+
             SetValues();
         }
 
@@ -73,17 +73,6 @@ namespace GUI
             }
         }
 
-        #endregion
-
-
-        #region Events
-
-        private void GoToShopButton_Click(object sender, EventArgs e)
-        {
-            if (!String.IsNullOrEmpty(Item.ShopUrl))
-                OpenBrowser(Item.ShopUrl);
-
-        }
 
         private void OpenBrowser(string url)
         {
@@ -114,12 +103,19 @@ namespace GUI
             }
         }
 
-        private void SearchControl2_Resize(object sender, EventArgs e)
-        {
+        #endregion
 
+
+        #region Events
+
+        private void GoToShopButton_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(Item.ShopUrl))
+                OpenBrowser(Item.ShopUrl);
 
         }
-        #endregion
+
+
 
         private void ItemControl_MouseEnter(object sender, EventArgs e)
         {
@@ -139,8 +135,9 @@ namespace GUI
             richTextBoxParameters.BackColor = Color.White;
         }
 
-      
+        #endregion
 
-   
+
+
     }
 }
