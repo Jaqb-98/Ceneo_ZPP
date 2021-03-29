@@ -40,6 +40,7 @@
             this.btnPreviousPage = new System.Windows.Forms.Button();
             this.btnNextPage = new System.Windows.Forms.Button();
             this.lblPageNumber = new System.Windows.Forms.Label();
+            this.cbOnline = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +66,7 @@
             this.tableLayoutPanel1.Controls.Add(this.btnPreviousPage, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnNextPage, 5, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblPageNumber, 4, 1);
+            this.tableLayoutPanel1.Controls.Add(this.cbOnline, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -173,6 +175,19 @@
             this.lblPageNumber.TabIndex = 23;
             this.lblPageNumber.Text = "Page";
             // 
+            // cbOnline
+            // 
+            this.cbOnline.AutoSize = true;
+            this.cbOnline.Checked = true;
+            this.cbOnline.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbOnline.ForeColor = System.Drawing.Color.Black;
+            this.cbOnline.Location = new System.Drawing.Point(3, 85);
+            this.cbOnline.Name = "cbOnline";
+            this.cbOnline.Size = new System.Drawing.Size(74, 24);
+            this.cbOnline.TabIndex = 24;
+            this.cbOnline.Text = "Online";
+            this.cbOnline.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -204,6 +219,7 @@
         private System.Windows.Forms.Button btnNextPage;
         private System.Windows.Forms.Button btnPreviousPage;
         private System.Windows.Forms.Label lblPageNumber;
+        private System.Windows.Forms.CheckBox cbOnline;
     }
 }
 
