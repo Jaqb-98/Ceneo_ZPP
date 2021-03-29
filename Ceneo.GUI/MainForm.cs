@@ -72,14 +72,25 @@ namespace GUI
         private void CreateControls()
         {
             List<Item> items;
-            try
+
+            if (cbOnline.Checked)
             {
-                items = GetItems();
+
+                try
+                {
+
+                    items = GetItems();
+                }
+                catch (Exception)
+                {
+
+                    items = GetItems(true);
+                    cbOnline.Checked = false;
+                }
+
             }
-            catch (Exception)
-            {
+            else
                 items = GetItems(true);
-            }
 
             _items = items;
             _maxSubPage = (int)Math.Ceiling((double)_items.Count / _perPage) - 1;
@@ -95,7 +106,7 @@ namespace GUI
             foreach (var item in GetPage(_items, subpage, perPage))
             {
                 var newItemControl = new ItemControl(item);
-                itemControls.Add(newItemControl); ;
+                itemControls.Add(newItemControl);
             }
 
             _PagedItemControls[_subpage] = itemControls;
@@ -129,7 +140,7 @@ namespace GUI
 
             flItemListPanel.Controls.AddRange(_PagedItemControls[_subpage].ToArray());
 
-            
+
 
             for (int i = 0; i < flItemListPanel.Controls.Count; i++)
             {
@@ -238,7 +249,7 @@ namespace GUI
             lblPageNumber.Text = _pageCount.ToString();
         }
 
-   
+
     }
 
 
